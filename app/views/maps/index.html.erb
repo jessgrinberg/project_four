@@ -8,6 +8,7 @@
 <body>
 <hr>
 <div class="container"><%= image_tag("container.jpg")%></div>
+<span href="#" class="btn">Toggle Blur</span>
 <hr>
 
 
@@ -404,6 +405,8 @@
 
 var vague = $(".container").Vague({intensity:10});
     vague.blur();
+
+$(".btn").on("click",$.proxy(vague.toggleblur,vague));
 
 </script>
 </body>
