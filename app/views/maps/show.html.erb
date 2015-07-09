@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Organization:</strong>
+  <%= @map.organization %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @map.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @map.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @map.state %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @map.zipcode %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @map.country %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @map.phone %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @map.website %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @map.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @map.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_map_path(@map) %> |
+<%= link_to 'Back', maps_path %>
