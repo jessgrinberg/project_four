@@ -5,6 +5,18 @@ class MapsController < ApplicationController
   # GET /maps.json
   def index
     @maps = Map.all
+    @hash = Gmaps4rails.build_markers(@maps) do |map, marker|
+      marker.lat map.latitude
+      marker.lng map.longitude
+      marker.title map.organization
+      marker.picture({
+       # "url" => "https://instagramimages-a.akamaihd.net/profiles/profile_27307946_75sq_1365271945.jpg",
+       #"url" => "assets/marker.jpg",
+       "width" =>  80,        
+       "height" => 80,
+       "size" =>  "10px",
+       })
+    end
   end
 
   # GET /maps/1
