@@ -57,28 +57,15 @@
 
 <br>
 
-
 <%= link_to 'New Map', new_map_path %>
 
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
 
-<script type="text/javascript">
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+<%= render 'display'%>
 
-  markers = handler.addMarkers(<%=raw @hash.to_json %>);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-    
-  });
 
-  function initialize() {
-  autocomplete = new google.maps.places.Autocomplete(
-  /** @type {HTMLInputElement} */(document.getElementById('autocomplete')));
-  }
-</script>
 
 <%= render 'blur'%>
 
