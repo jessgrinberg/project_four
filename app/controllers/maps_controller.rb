@@ -10,8 +10,7 @@ class MapsController < ApplicationController
       marker.lng map.longitude
       marker.title map.organization
       marker.picture({
-       # "url" => "https://instagramimages-a.akamaihd.net/profiles/profile_27307946_75sq_1365271945.jpg",
-       #"url" => "assets/marker.jpg",
+       "url" => "assets/marker.jpg",
        "width" =>  80,        
        "height" => 80,
        "size" =>  "10px",
