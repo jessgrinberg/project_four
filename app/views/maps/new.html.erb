@@ -1,4 +1,4 @@
-<body onload= "initialize()">
+
 
 
 <script src="//maps.google.com/maps/api/js?v=3.13&sensor=false&libraries=geometry" type="text/javascript"></script>
@@ -8,6 +8,8 @@
 
 
 <h1>New Map</h1>
+
+<body onmousemove = "initialize()">
 
 <%= form_for(@map) do |f| %>
   <% if @map.errors.any? %>
@@ -22,36 +24,35 @@
     </div>
   <% end %>
 
+
+
+
   <%= form_tag( :method => "get", id: "search-form") do %>
 
-    <div class="field">
+ <div class="field">
     <%= f.label :organization %><br>
     <%= f.text_field :organization %>
   </div>
+
 
    <div class="field">	
     <%= text_field_tag "map[address]", nil, placeholder: 'Enter your address', :id => 'autocomplete', :onFocus => 'geolocate()' %>
       </div>
 
+
  <div class="actions">
     <%= submit_tag "Search", id: "search-submit", value: "Submit" %>
-    </div>
+    </div> 
  <% end %>
 
-<!-- 
- <div class="actions">
-    <%= f.submit %>
-  </div> -->
+<!--     <%= f.submit %> -->
 <% end %>
 
 
-<%#= render 'form' %>
-
-<!-- <div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-</div> -->
 
 <%= render 'display'%>
+
+
 
 
 </body>
