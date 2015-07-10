@@ -12,6 +12,15 @@
 
 
 <body>
+<%if current_user%>
+  You are logged in as <%= current_user.name if current_user %>
+<%= link_to 'LOG OUT!', logout_path, method: :delete %>
+<%else %>
+  <%= link_to 'SIGN UP', new_user_path %>
+  <%= link_to 'LOG IN!', login_path%>
+ <%end%>
+
+
 <hr>
 <div class="container"><%= image_tag("container.jpg")%></div>
 <!-- <span href="#" class="btn">Toggle Blur</span>

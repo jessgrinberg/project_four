@@ -1,33 +1,59 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
+<!-- <%#= form_for(@user) do |f| %>
+  <%# if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%#= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+      <%# @user.errors.full_messages.each do |message| %>
+        <li><%#= message %></li>
+      <%# end %>
       </ul>
     </div>
-  <% end %>
+  <%# end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%#= f.label :name %><br>
+    <%#= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%#= f.label :email %><br>
+    <%#= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :picture %><br>
-    <%= f.text_field :picture %>
+    <%#= f.label :picture %><br>
+    <%#= f.text_field :picture %>
   </div>
   <div class="field">
-    <%= f.label :password_digest %><br>
-    <%= f.text_field :password_digest %>
+    <%#= f.label :password %><br>
+    <%#= f.password_field :password %>
   </div>
   <div class="actions">
+    <%#= f.submit %>
+  </div>
+<%# end %> -->
+
+
+
+<h1>Sign Up</h1>
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div>
     <%= f.submit %>
   </div>
 <% end %>
